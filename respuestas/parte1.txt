@@ -1,0 +1,30 @@
+PARTE 1 - Arreglos de una dimension
+
+1. ¿Qué índice tiene el último elemento de un arreglo de tamaño 5?
+   El índice 4. Los índices empiezan en 0, así que un arreglo de tamaño n
+   tiene índices de 0 a n-1. El último elemento siempre es arreglo[arreglo.length - 1].
+
+2. ¿Qué pasa si intentas acceder a notas[5] en este arreglo? ¿Qué error esperas?
+   Se lanza una excepción en tiempo de ejecución:
+   java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 5.
+   Compila sin problema, pero el programa se detiene al ejecutar esa línea
+   porque la posición 5 no existe.
+
+3. ¿Por qué se inicializa maximo = notas[0] en vez de maximo = 0?
+   Porque así el valor inicial es una nota real del arreglo. Con maximo = 0
+   el máximo fallaría si todas las notas fueran negativas: 0 sería mayor que
+   todas y nunca se reemplazaría, devolviendo un valor que no está en el
+   arreglo. (Para el mínimo, 0 sería aún peor, pues nada con notas positivas lo
+   superaría hacia abajo.) Partir del primer elemento garantiza que el
+   resultado siempre sea un dato existente, sin importar los valores.
+
+4. ¿Qué significa (double) antes de suma? ¿Qué pasaría si lo quitas?
+   Es un cast: convierte el valor de suma de int a double antes de dividir.
+   Si se quita, suma / notas.length sería una división entera (int / int) y
+   se descartarían los decimales. Con las notas originales (suma 380 y 5
+   notas) daría 76 en vez de 76.00, y con otros datos, por ejemplo 578 / 8,
+   daría 72 en vez de 72.25.
+
+AHORA MODIFICA: se cambió new int[5] por new int[8]. Con las notas
+55, 72, 88, 91, 44, 67, 78, 83 el resultado fue:
+Suma 578, Promedio 72.25, Máxima 91, Mínima 44.
