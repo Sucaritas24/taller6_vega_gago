@@ -1,0 +1,29 @@
+PARTE 3 - Arreglos de objetos
+
+1. ¿Qué contiene productos[0] antes de ejecutar new Producto(...)?
+   null. Al crear new Producto[4] se reservan 4 casillas para referencias,
+   pero todavía no hay objetos. Si se usara productos[0].precio antes de
+   asignarlo, saldría un NullPointerException.
+
+2. ¿Qué diferencia hay entre productos[i].precio y productos[i].valorTotal()?
+   precio es un atributo: un dato guardado en el objeto, que se lee directamente.
+   valorTotal() es un método: ejecuta código y calcula un resultado (precio *
+   stock) cada vez que se llama. Por eso se escribe con paréntesis y no se
+   guarda, siempre refleja los valores actuales.
+
+3. Cuando haces masEconomico = productos[i], ¿se copian los datos del objeto o solo la referencia? ¿Qué implica eso?
+   Solo se copia la referencia (la "dirección" del objeto). No se crea un
+   objeto nuevo: masEconomico y productos[i] apuntan al mismo objeto. Si se
+   modifica el objeto mediante una de las dos variables (por ejemplo
+   mayorStock.precio = ...), el cambio se ve también desde el arreglo.
+
+4. Después del descuento, ¿el valorTotalInventario impreso refleja el nuevo precio? ¿Por qué?
+   No. valorTotalInventario se calculó en el bucle ANTES de aplicar el
+   descuento y es un double que guarda un valor ya calculado. Cambiar después
+   el precio de un producto no lo recalcula. Para reflejarlo habría que
+   volver a recorrer el arreglo y sumar de nuevo.
+
+AHORA MODIFICA: se agregó "Audífonos" ($75.00, stock 30) y el descuento de 15%
+se aplica al producto con mayor stock, que es Audífonos: pasa de $75.00 a
+$63.75 (valor total de $2250.00 a $1912.50). El valor total del inventario
+con los 5 productos es $10245.00.
