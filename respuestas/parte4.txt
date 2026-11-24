@@ -1,0 +1,36 @@
+PARTE 4 - Colecciones ArrayList y LinkedList
+
+1. ¿Cuál es la diferencia entre add("valor") y add(1, "valor")?
+   add("valor") agrega el elemento al final de la lista. add(1, "valor") lo
+   inserta en el índice 1 y desplaza hacia la derecha los elementos que
+   estaban desde esa posición.
+
+2. ¿Qué ocurre si intentas hacer ciudades.get(10) en una lista de 5 elementos?
+   Lanza IndexOutOfBoundsException (Index 10 out of bounds for length 5),
+   porque los índices válidos van de 0 a 4. Es un error en tiempo de ejecución.
+
+3. ¿Por qué usamos ArrayList<Integer> y no ArrayList<int>?
+   Porque los genéricos de Java solo aceptan tipos de referencia (clases), no
+   tipos primitivos. Integer es la clase "envoltorio" (wrapper) de int. Java
+   hace la conversión automática (autoboxing/unboxing) al agregar y leer valores.
+
+4. ¿Cuál es el orden de atención en una cola (FIFO)? ¿Cuál sería el orden en una pila (LIFO) con addFirst/removeFirst?
+   FIFO (First In, First Out): se atiende en el orden de llegada, así que sale
+   primero el que entró primero (Cliente 1, 2, 3, 4).
+   LIFO (Last In, First Out) con addFirst/removeFirst: sale primero el último
+   que se agregó. Si se agregan 1, 2, 3, 4 con addFirst, salen 4, 3, 2, 1.
+
+5. ¿Cuándo preferirías usar LinkedList sobre ArrayList y viceversa?
+   ArrayList: cuando se lee mucho por índice (get(i) es rápido) y casi no se
+   inserta ni elimina en medio de la lista; por ejemplo una lista de datos que
+   se consulta con frecuencia.
+   LinkedList: cuando se insertan o eliminan elementos con frecuencia al
+   inicio o al medio, o cuando se usa como cola o pila (addFirst, addLast,
+   removeFirst), como en el turno bancario.
+
+AHORA MODIFICA:
+- Sección B: el filtro pasó de >= 50 a >= 40. Resultado: [78, 56, 89, 45, 67]
+  y la suma de los filtrados es 335.
+- Sección C: se atienden 2 clientes, llegan Cliente 5 y Cliente 6 y se muestra
+  la cola completa [Cliente 3, Cliente 4, Cliente 5, Cliente 6] antes de
+  seguir atendiendo.
