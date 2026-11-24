@@ -1,0 +1,25 @@
+PARTE 2 - Arreglos de dos dimensiones
+
+1. ¿Cómo accedes al valor 88 (Luis en Español) usando índices?
+   calificaciones[1][1]. Luis es la fila 1 (segundo estudiante) y Español es
+   la columna 1 (segunda materia).
+
+2. ¿Cuántos bucles for necesitas para recorrer todos los elementos de un arreglo 2D? ¿Por qué?
+   Dos bucles anidados. El externo recorre las filas y el interno recorre las
+   columnas de la fila actual. Un solo bucle recorre solo una dimensión; para
+   visitar cada celda [f][c] hace falta una variable de índice por dimensión.
+
+3. Si agregas un cuarto estudiante, ¿qué línea de código tendrías que cambiar?
+   La línea int filas = 3; pasa a int filas = 4;. Además hay que agregar
+   "Pedro" al arreglo estudiantes y asignar sus tres notas en la fila 3. Los
+   bucles usan la variable filas, por eso no hay que tocarlos.
+
+4. ¿Qué significa String.format("%-12d", valor)? ¿Qué cambia si quitas el -?
+   Formatea un entero (d) en un campo de 12 caracteres de ancho, alineado a la
+   izquierda por el signo "-" (se rellena con espacios a la derecha). Sin el "-"
+   se alinea a la derecha (los espacios van a la izquierda) y la tabla se
+   vería desalineada respecto a los encabezados.
+
+AHORA MODIFICA: se agregó a Pedro (78, 65, 92), filas = 4. Su promedio es 78.33
+y los promedios de columna se recalcularon solos: Matematica 79.50,
+Español 73.75, Ciencias 84.25.
